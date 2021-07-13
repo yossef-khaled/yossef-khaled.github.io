@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import Main from './Components/MainComponent/Main';
 
 function App() {
   return (
     <div className="App">
-      <h1>The home page of the deployment</h1>
+      <Main/>
     </div>
   );
 }
