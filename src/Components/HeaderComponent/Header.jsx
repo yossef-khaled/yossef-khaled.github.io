@@ -4,17 +4,21 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Button from 'reactstrap';
-import './style.css';
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
+import './HeaderStyle.css';
 
 const styles = {
     root: {
         flexGrow: "1",
     },
     headerButton : {
-        color: "#ffffff",
         borderRadius: "0.25em",
-    },
+        borderStyle: "solid",
+        textDecoration: "none",
+        padding: "0.5em",
+        borderWidth: "thin"
+    }
 }
 
 function Header(props) {
@@ -25,19 +29,34 @@ function Header(props) {
         <div >
             <AppBar position="static">
                 <Toolbar className="header">
-                    <Box borderColor="text.primary">
-                        <Button borderColor="white" color={`${props.color}`}>
-                            Projects
-                        </Button>
-                    </Box>
                     <IconButton>
                         <Button>
-                            Resume
+                            <Link 
+                                to="/projects" className={classes.headerButton}
+                                style={{color: props.color, borderColor:props.borderColor}}
+                            >
+                                Projects
+                            </Link>
                         </Button>
                     </IconButton>
                     <IconButton>
                         <Button>
-                            Contact
+                            <Link 
+                                to="/resume" className={classes.headerButton}
+                                style={{color: props.color, borderColor:props.borderColor}}
+                            >
+                                Resume
+                            </Link>
+                        </Button>
+                    </IconButton>
+                    <IconButton>
+                        <Button>
+                            <Link 
+                                to="/contact" className={classes.headerButton}
+                                style={{color: props.color, borderColor:props.borderColor}}
+                            >
+                                Contact
+                            </Link>
                         </Button>
                     </IconButton>
                 </Toolbar>
