@@ -1,0 +1,11 @@
+.header { 
+    justify-content:flex-end;
+    background-color: #000000;
+}
+
+.headerButton {
+    color: #ffffff;
+    border-radius: 0.25em;
+    border-style: solid;
+    border-color: white; 
+}
