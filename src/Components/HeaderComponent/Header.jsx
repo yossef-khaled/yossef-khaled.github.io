@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import red from '@material-ui/core/colors/red';
 import './HeaderStyle.css';
 
 const styles = {
@@ -24,16 +25,21 @@ const styles = {
 function Header(props) {
 
     const { classes } = props;  
+    const color = red[500];
 
     return(
         <div >
-            <AppBar position="static">
-                <Toolbar className="header">
+            <AppBar position="static" style={{ backgroundColor: color }}>
+                <Toolbar className="header" style={{
+                    backgroundColor: props.backgroundColor
+                }}>
                     <IconButton>
                         <Button>
                             <Link 
                                 to="/projects" className={classes.headerButton}
-                                style={{color: props.color, borderColor:props.borderColor}}
+                                style={{color: props.color,
+                                        borderColor: props.borderColor,
+                                    }}
                             >
                                 Projects
                             </Link>
