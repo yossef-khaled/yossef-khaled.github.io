@@ -8,7 +8,7 @@ import Projects from '../ProjectsComponent/Projects';
 function Main(props) { 
 
 
-    console.log(`${JSON.stringify(props.setBackgroundImage)} at Main`);
+    console.log(`${JSON.stringify(props.onProjectsRender)} at Main`);
 
     return (
         <>
