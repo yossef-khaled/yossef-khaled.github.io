@@ -2,7 +2,7 @@ const PROJECTS_DATA = [
     {
         id: 1,
         name: "Canesee",
-        myRole: "Graduation project - Android developer & Hardware engineer.",
+        myRole: "Android developer & Hardware engineer. (Graduation project)",
         stack: "(TensorFlow, Android/kotlin, Raspberry Pi, Arduino).",
         description: "Smart glasses and cane for the blind. Recoginses faces, texts, scenery, and emotions. Uses ultrasonic sensors to detect obstacles.",
         link: "https://github.com/canesee-project"

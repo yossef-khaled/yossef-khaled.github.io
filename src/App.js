@@ -2,6 +2,7 @@ import './App.css';
 import Main from './Components/MainComponent/Main';
 import { BrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
+import bWHorizontally from '../src/Shared/images/black-white-horizontally.jpg'; 
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
         {{
           minHeight: "100%",
           maxHeight: "500%", 
-          //backgroundImage: `url(../src/Shared/images/${backgroundImage})`,
+          backgroundImage: `url(${bWHorizontally})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "cover cover"
