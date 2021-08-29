@@ -16,7 +16,7 @@ function Projects(props) {
     
     const { classes } = props;
     console.log(`${JSON.stringify(props)} at Projects`);    
-    //props.onProjectsRender('black-white-vertically.jpg');
+    props.onProjectsRender('black-white-vertically.jpg');
 
     const projects = PROJECTS_DATA.map((project) => {
         return(

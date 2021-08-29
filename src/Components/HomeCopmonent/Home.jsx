@@ -3,6 +3,7 @@ import Avatar from '@material-ui/core/Avatar';
 import { PropTypes } from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Header from '../HeaderComponent/Header';
+import me from "../../Shared/images/me.jpg";
 
 const styles = {
     myPhoto: {
@@ -26,7 +27,7 @@ function Home(props) {
         <div>
             <Header color="#ffffff" borderColor="#ffffff" backgroundColor="#000000"/>
             <h2>𝕄𝕪 𝕟𝕒𝕞𝕖 𝕚𝕤 𝕐𝕠𝕦𝕤𝕤𝕖𝕗 𝕂𝕙𝕒𝕝𝕖𝕕, 𝕀 𝕒𝕞 𝕒 𝕨𝕖𝕓 𝕕𝕖𝕧𝕖𝕝𝕠𝕡𝕖𝕣.</h2>
-            <Avatar alt="Photo of me" src='../../Shared/images/me.jpg' className={classes.myPhoto}/>
+            <Avatar alt="Photo of me" src={me} className={classes.myPhoto}/>
             <h3 className={classes.blacked}> - Most of the time I play football , in my free times I do some "typin in keyboard" stuff.</h3>
             <br/>
             <h3 className={classes.blacked} >First computer I saw was in : 26-10-2018</h3>

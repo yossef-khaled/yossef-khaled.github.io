@@ -2,6 +2,8 @@ import Container from '@material-ui/core/Container';
 import { PropTypes } from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import githubLogo from "../../Shared/images/github-logo.png";
 
 const styles = {
     mainContainer: {
@@ -51,6 +53,12 @@ function Project(props) {
                     <br/>
                     {props.stack}
                 </Typography>
+                <br/>
+                <Button variant="outlined" disableElevation>
+                    See on Github
+                    <img src={githubLogo}/>
+                    {/* TODO: Make the photo hyperlink to the project */}
+                </Button>
             </Container>
          </Container>
     );
