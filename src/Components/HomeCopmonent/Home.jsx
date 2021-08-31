@@ -2,6 +2,7 @@ import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import { PropTypes } from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import bwHorizontally from '../../Shared/images/black-white-horizontally.jpg';
 import Header from '../HeaderComponent/Header';
 import me from "../../Shared/images/me.jpg";
 
@@ -21,7 +22,7 @@ const styles = {
 function Home(props) {
     
     const {classes} = props;
-
+    props.onHomeRender(bwHorizontally);
 
     return(
         <div>
