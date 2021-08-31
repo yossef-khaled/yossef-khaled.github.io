@@ -25,6 +25,9 @@ const styles = {
         display: "table-cell",
         width: "40%",
     },
+    projectButton: {
+        textDecoration: "none"
+    }
 }
 
 function Project(props) {
@@ -54,11 +57,12 @@ function Project(props) {
                     {props.stack}
                 </Typography>
                 <br/>
-                <Button variant="outlined" disableElevation>
-                    See on Github
-                    <img src={githubLogo}/>
-                    {/* TODO: Make the photo hyperlink to the project */}
-                </Button>
+                <a href={props.link} className={classes.projectButton}>
+                    <Button variant="outlined" disableElevation>
+                        See on Github
+                        <img src={githubLogo}/>
+                    </Button>
+                </a>
             </Container>
          </Container>
     );
