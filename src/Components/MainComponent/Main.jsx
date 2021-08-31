@@ -8,13 +8,14 @@ import Projects from '../ProjectsComponent/Projects';
 function Main(props) { 
 
 
-    console.log(`${JSON.stringify(props.onProjectsRender)} at Main`);
+    console.log(`${JSON.stringify(props.onComponentRender())} at Main`);
+    
 
     return (
         <>
             <Switch>
-                <Route path="/home" component={() => <Home />}/>
-                <Route path="/projects" component={() => <Projects onProjectsRender={(imageName) => props.onProjectsRender(imageName)}/>}/>
+                <Route path="/home" component={() => <Home onHomeRender={(imageName) => props.onComponentRender(imageName)}/>}/>
+                <Route path="/projects" component={() => <Projects onProjectsRender={(imageName) => props.onComponentRender(imageName)}/>}/>
                 <Redirect to="/home"/>
             </Switch>
         </>
