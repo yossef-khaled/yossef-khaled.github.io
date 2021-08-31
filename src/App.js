@@ -6,7 +6,7 @@ import bWHorizontally from '../src/Shared/images/black-white-horizontally.jpg';
 
 function App() {
 
-  const [backgroundImage, setBackgroundImage] = useState('black-white-horizontally.jpg');
+  const [backgroundImage, setBackgroundImage] = useState();
 
   console.log(`${JSON.stringify(backgroundImage)} is the background image at App`);
 
@@ -16,12 +16,12 @@ function App() {
         {{
           minHeight: "100%",
           maxHeight: "500%", 
-          backgroundImage: `url(${bWHorizontally})`,
+          backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "cover cover"
         }}>
-          <Main onProjectsRender={(imageName) => setBackgroundImage(imageName)}/>
+          <Main onComponentRender={(imageName) => setBackgroundImage(imageName)}/>
         </div>
     </BrowserRouter>
   );
