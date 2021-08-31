@@ -2,6 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Header from '../HeaderComponent/Header';
+import bWVertically from '../../Shared/images/black-white-vertically.jpg'; 
 import PROJECTS_DATA from '../../Shared/Data/Projects';
 import Project from '../ProjectComponent/Project';
 import Container from '@material-ui/core/Container';
@@ -16,7 +17,8 @@ function Projects(props) {
     
     const { classes } = props;
     console.log(`${JSON.stringify(props)} at Projects`);    
-    props.onProjectsRender('black-white-vertically.jpg');
+    props.onProjectsRender(bWVertically);
+    console.log(bWVertically);
 
     const projects = PROJECTS_DATA.map((project) => {
         return(
