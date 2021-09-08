@@ -2,7 +2,6 @@ import './App.css';
 import Main from './Components/MainComponent/Main';
 import { BrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
-import bWHorizontally from '../src/Shared/images/black-white-horizontally.jpg'; 
 
 function App() {
 
