@@ -6,7 +6,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import red from '@material-ui/core/colors/red';
 import './HeaderStyle.css';
 
 const styles = {
@@ -24,20 +23,29 @@ const styles = {
 
 function Header(props) {
 
-    const { classes } = props;  
-    const color = red[500];
+    const { classes } = props;
 
     return(
-        <div >
-            <AppBar position="static" style={{ backgroundColor: color }}>
+        <div className>
+            <AppBar position="static">
                 <Toolbar className="header" style={{
                     backgroundColor: props.backgroundColor
                 }}>
                     <IconButton>
                         <Button>
                             <Link 
+                                to="/education" className={classes.headerButton}
+                                style={{color: props.btnColor, borderColor:props.borderColor}}
+                            >
+                                Education
+                            </Link>
+                        </Button>
+                    </IconButton>
+                    <IconButton>
+                        <Button>
+                            <Link 
                                 to="/projects" className={classes.headerButton}
-                                style={{color: props.color,
+                                style={{color: props.btnColor,
                                         borderColor: props.borderColor,
                                     }}
                             >
@@ -48,18 +56,8 @@ function Header(props) {
                     <IconButton>
                         <Button>
                             <Link 
-                                to="/resume" className={classes.headerButton}
-                                style={{color: props.color, borderColor:props.borderColor}}
-                            >
-                                Resume
-                            </Link>
-                        </Button>
-                    </IconButton>
-                    <IconButton>
-                        <Button>
-                            <Link 
                                 to="/contact" className={classes.headerButton}
-                                style={{color: props.color, borderColor:props.borderColor}}
+                                style={{color: props.btnColor, borderColor:props.borderColor}}
                             >
                                 Contact
                             </Link>
