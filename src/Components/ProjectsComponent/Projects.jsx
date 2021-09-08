@@ -38,7 +38,7 @@ function Projects(props) {
     return(
         
         <div>
-            <Header color="#000000" borderColor="#000000" backgroundColor="#ffffff"/>
+            <Header btnColor="#000000" borderColor="#000000" backgroundColor="#ffffff"/>
             <Container>
                 {projects}
             </Container>
