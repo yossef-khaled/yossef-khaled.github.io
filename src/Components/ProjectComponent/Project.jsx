@@ -13,10 +13,9 @@ const styles = {
         fontSize: "150%",
     },
     titleContainer: {
-        textAlign: "right",
-        marginRight: "50%",
+        textAlign: "right", 
         display: "table-cell",
-        width: "40%",
+        width: "35%",
     },
     descriptionContainer: {
         color: "#000000",
