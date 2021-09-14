@@ -11,6 +11,7 @@ const styles = {
     horizontalLine: {
         width: "100%",
     }
+    //TODO make the background image width responsive
 }
 
 function Projects(props) {
@@ -39,7 +40,7 @@ function Projects(props) {
         
         <div>
             <Header btnColor="#000000" borderColor="#000000" backgroundColor="#ffffff"/>
-            <Container>
+            <Container style={{marginLeft: "11%"}}>
                 {projects}
             </Container>
         </div>
