@@ -10,24 +10,25 @@ import Header from '../HeaderComponent/Header'
 
 const styles = {
     collegeSec: {
-        marginRight: "15%",
-        display: "table-cell"
+        display: "table-cell",
+        
     },
     title: {
         fontSize: "150%",
-        marginRight: "79%"
+        marginRight: "80%"
     },
     year: {
         color: "#ffffff",
-        fontSize: "120%",
+        fontSize: "150%",
+        marginRight: "70%",
+        float: "left",
+        
     },
     yearDetails: {
-        marginLeft: "50%",
         float: "left"
     },
     coursesSec: {
         color: "#000000",
-        textAlign: "center",
         display: "table-cell"
     }
 };
@@ -51,23 +52,15 @@ function Education(props) {
                         </Typography>
                         <br/>
                         <Typography variant="overline" className={classes.yearDetails}>
-                            First Year In College
+                            Joined faculty of engineering, zagazig university. 
                         </Typography>
                         <br/>
                         <Typography variant="overline" className={classes.year}>
-                            2016 - 2017 
+                            2016 - 2018
                         </Typography>
                         <br/>
                         <Typography variant="overline" className={classes.yearDetails}>
-                            Second Year In College
-                        </Typography>
-                        <br/>
-                        <Typography variant="overline" className={classes.year}>
-                            2017 - 2018 
-                        </Typography>
-                        <br/>
-                        <Typography variant="overline" className={classes.yearDetails}>
-                            Third Year In College
+                            Specialize in electrical engineering.
                         </Typography>
                         <br/>
                         <Typography variant="overline" className={classes.year}>
@@ -75,7 +68,7 @@ function Education(props) {
                         </Typography>
                         <br/>
                         <Typography variant="overline" className={classes.yearDetails}>
-                            Fourth Year In College
+                            Specialize in CSE inside electrical engineering.
                         </Typography>
                         <br/>
                         <Typography variant="overline" className={classes.year}>
@@ -83,7 +76,7 @@ function Education(props) {
                         </Typography>
                         <br/>
                         <Typography variant="overline" className={classes.yearDetails}>
-                            Bachelore's Year
+                            Bachelore's Year, and the year I learned the most about our track.
                         </Typography>
                 </Container>
             </Container>
@@ -91,6 +84,9 @@ function Education(props) {
                 <Typography variant="overline" className={classes.title}>
                         Courses  
                 </Typography>
+            </Container>
+            <Container>
+                
             </Container>
         </>
     );
