@@ -3,10 +3,10 @@ import Container from '@material-ui/core/Container';
 import { PropTypes } from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import bwDiagonally from '../../Shared/images/black-white-diagonally.jpg'
-import Header from '../HeaderComponent/Header'
-
+import bwDiagonally from '../../Shared/images/black-white-diagonally.jpg';
+import Header from '../HeaderComponent/Header';
+import Course from '../CourseComponent/Course';
+import COURSES_DATA from '../../Shared/Data/Courses';
 
 const styles = {
     collegeSec: {
@@ -38,6 +38,12 @@ function Education(props) {
     const {classes} = props;
 
     props.onEducationRender(bwDiagonally);
+
+    const courses = COURSES_DATA.map((course) => {
+        return(
+            <Course courseName={course.name}/>
+        );
+    });
 
     return(
         <>
@@ -86,7 +92,7 @@ function Education(props) {
                 </Typography>
             </Container>
             <Container>
-                
+                {courses}
             </Container>
         </>
     );
