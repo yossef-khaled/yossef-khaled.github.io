@@ -11,7 +11,10 @@ const styles = {
     horizontalLine: {
         width: "100%",
     }
-    //TODO make the background image width responsive
+    //TODO :
+    // 1- Make the background image width responsive.
+    // 2- Add "Bookstore project" into the projects.js file.
+
 }
 
 function Projects(props) {
