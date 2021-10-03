@@ -3,17 +3,21 @@ import Container from '@material-ui/core/Container';
 import { PropTypes } from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import bwDiagonally from '../../Shared/images/black-white-diagonally.jpg';
+import bWDiagonally from '../../Shared/images/black-white-diagonally.jpg'; 
 import Header from '../HeaderComponent/Header';
 import Course from '../CourseComponent/Course';
 import COURSES_DATA from '../../Shared/Data/Courses';
 
 const styles = {
-    collegeSec: {
-        display: "table-cell",
-        
+    mainContainer: {
+        display: "table"
     },
-    title: {
+    collegeSec: {
+        width: "40%",
+        marginRight: "50%",
+        display: "table-cell",
+    },
+    collegeTitle: {
         fontSize: "150%",
         marginRight: "80%"
     },
@@ -27,9 +31,23 @@ const styles = {
     yearDetails: {
         float: "left"
     },
+    courseTitle: {
+        fontSize: "150%",
+        marginLeft: "83%",
+        
+    },
     coursesSec: {
         color: "#000000",
-        display: "table-cell"
+        marginLeft: "50%",
+        width: "40%",
+        display: "table-cell",
+    },
+    courses: {
+    },
+    horizontalLine: {
+        width: "85%",
+        float: "right",
+
     }
 };
 
@@ -37,19 +55,34 @@ function Education(props) {
 
     const {classes} = props;
 
-    props.onEducationRender(bwDiagonally);
+    props.onEducationRender(bWDiagonally);
 
     const courses = COURSES_DATA.map((course) => {
+
         return(
-            <Course courseName={course.name}/>
+            <>
+                <Course courseName={course.name}
+                        organization={course.organization}
+                        courseDate={course.date}
+                        courseDuration={course.duration}
+                        courseType={course.type}
+                        courseDetails={course.details}
+                        courses={course.courses}
+                        credentialId={course.credentialId}
+                        certificate={course.certificate}
+                />
+
+                {/*+4 is because of the specialization courses are not considered of the main array*/}
+                {course.id != COURSES_DATA.length + 4 && <hr className={classes.horizontalLine}/>}
+            </>
         );
     });
 
     return(
-        <>
+        <React.Fragment className={classes.mainContainer}>
             <Header btnColor="#000000" borderColor="#000000" backgroundColor="#ffffff"/>
             <Container className={classes.collegeSec}>
-                <Typography variant="overline" className={classes.title}>
+                <Typography variant="overline" className={classes.collegeTitle}>
                     College Career  
                 </Typography>
                 <Container>
@@ -87,14 +120,14 @@ function Education(props) {
                 </Container>
             </Container>
             <Container className={classes.coursesSec}>
-                <Typography variant="overline" className={classes.title}>
+                <Typography variant="overline" className={classes.courseTitle}>
                         Courses  
                 </Typography>
+                <Container className={classes.courses}>
+                    {courses}
+                </Container>
             </Container>
-            <Container>
-                {courses}
-            </Container>
-        </>
+        </React.Fragment>
     );
 }
 
