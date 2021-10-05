@@ -12,9 +12,11 @@ import bWVertically from '../../Shared/images/black-white-vertically.jpg';
 //Import from other components
 import Header from '../HeaderComponent/Header';
 import Course from '../CourseComponent/Course';
+import Project from '../ProjectComponent/Project';
 
 //Import data 
 import COURSES_DATA from '../../Shared/Data/Courses';
+import PROJECTS_DATA from '../../Shared/Data/Projects';
 
 //Others
 import { PropTypes } from 'prop-types';
@@ -41,7 +43,8 @@ const styles = {
         
     },
     yearDetails: {
-        float: "left"
+        float: "left",
+        fontSize: "90%"
     },
     courseTitle: {
         fontSize: "150%",
@@ -59,7 +62,6 @@ const styles = {
     horizontalLine: {
         width: "85%",
         float: "right",
-
     }
 };
 
@@ -108,6 +110,7 @@ function Education(props) {
                             Joined faculty of engineering, zagazig university. 
                         </Typography>
                         <br/>
+                        <hr className={classes.horizontalLine} style={{float: "left"}}/>
                         <Typography variant="overline" className={classes.year}>
                             2016 - 2018
                         </Typography>
@@ -116,21 +119,69 @@ function Education(props) {
                             Specialize in electrical engineering.
                         </Typography>
                         <br/>
+                        <hr className={classes.horizontalLine} style={{float: "left"}}/>
                         <Typography variant="overline" className={classes.year}>
                             2018 - 2019 
                         </Typography>
                         <br/>
                         <Typography variant="overline" className={classes.yearDetails}>
                             Specialize in CSE inside electrical engineering.
+                            <br/>
+                            <br/>
+                            <Typography style={{float: "left", fontSize: "120%"}}>
+                                Projects I done back that year 
+                            </Typography>
+                            <br/>
                         </Typography>
                         <br/>
+                        {PROJECTS_DATA.filter((project) => project.type.includes('2018-2019')).map((project) => {
+                            return (
+                                <>
+                                    {project.id != 8 && <hr style={{width: '70%',}}/>}
+                                    <Project projectName={project.name}
+                                             projectDescription={project.description}
+                                             stack={project.stack}
+                                             role={project.myRole}
+                                             link={project.link}
+                                             textColor="#ffffff"
+                                             fontSize='95%'
+                                    />
+                                </>
+                            )
+                        })}
+                        <br/>
+                        <hr className={classes.horizontalLine} style={{float: "left"}}/>
                         <Typography variant="overline" className={classes.year}>
                             2019 - 2020 
                         </Typography>
                         <br/>
                         <Typography variant="overline" className={classes.yearDetails}>
                             Bachelore's Year, and the year I learned the most about our track.
+                            <br/>
+                            <br/>
+                            <Typography style={{float: "left", fontSize: "120%"}}>
+                                Projects I done back that year 
+                            </Typography>
+                            <br/>
                         </Typography>
+                        <br/>
+                            {PROJECTS_DATA.filter((project) => project.type.includes('2019-2020')).map((project) => {
+                                return (
+                                    <>
+                                        {project.id != 1 && <hr style={{width: '70%'}}/>}
+                                        <Project projectName={project.name}
+                                                 projectDescription={project.description}
+                                                 stack={project.stack}
+                                                 role={project.myRole}
+                                                 link={project.link}
+                                                 textColor="#ffffff"
+                                                 fontSize='95%'
+                                        />
+                                        <br/>
+                                    </>
+                                )
+                            })}
+                        <br/>
                 </Container>
             </Container>
             <Container className={classes.coursesSec}>
