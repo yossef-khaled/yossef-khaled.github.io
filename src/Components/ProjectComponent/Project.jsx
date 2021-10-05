@@ -18,7 +18,6 @@ const styles = {
         width: "35%",
     },
     descriptionContainer: {
-        color: "#000000",
         marginLeft: "50%",
         textAlign: "left",
         display: "table-cell",
@@ -36,7 +35,7 @@ function Project(props) {
     return (
          <Container className={classes.mainContainer}>
             <Container maxWidth="sm" className={classes.titleContainer}>
-                <Typography variant="overline" className={classes.projectTitle}>
+                <Typography variant="overline" className={classes.projectTitle} style={{fontSize: props.fontSize}}>
                     {props.projectName}
                 </Typography>
                 <Typography>
@@ -44,11 +43,11 @@ function Project(props) {
                 </Typography>
             </Container>
             <Container maxWidth="sm" className={classes.descriptionContainer}>
-                <Typography variant="h6">
+                <Typography variant="h6" style={{color: props.textColor, fontSize: props.fontSize}}>
                     {props.projectDescription}
                 </Typography>
                 <br/>
-                <Typography>
+                <Typography style={{color: props.textColor}}>
                     <strong>
                     Stack used for the project : 
                     </strong>
@@ -57,7 +56,7 @@ function Project(props) {
                 </Typography>
                 <br/>
                 <a href={props.link} className={classes.projectButton}>
-                    <Button variant="outlined" disableElevation>
+                    <Button variant="outlined" style={{backgroundColor: "white"}} disableElevation>
                         See on Github
                         <img src={githubLogo}/>
                     </Button>
