@@ -1,12 +1,24 @@
+//Import from React
 import React from 'react';
+
+//Import from Material-ui
 import Container from '@material-ui/core/Container'; 
-import { PropTypes } from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import bWDiagonally from '../../Shared/images/black-white-diagonally.jpg'; 
+
+//Import images
+import bWVertically from '../../Shared/images/black-white-vertically.jpg';
+
+//Import from other components
 import Header from '../HeaderComponent/Header';
 import Course from '../CourseComponent/Course';
+
+//Import data 
 import COURSES_DATA from '../../Shared/Data/Courses';
+
+//Others
+import { PropTypes } from 'prop-types';
+
 
 const styles = {
     mainContainer: {
@@ -55,14 +67,16 @@ function Education(props) {
 
     const {classes} = props;
 
-    props.onEducationRender(bWDiagonally);
+    props.onEducationRender(bWVertically);
 
     const courses = COURSES_DATA.map((course) => {
 
         return(
             <>
-                <Course courseName={course.name}
+                <Course key={course.id}
+                        courseName={course.name}
                         organization={course.organization}
+                        organizationImg={course.organizationImg}
                         courseDate={course.date}
                         courseDuration={course.duration}
                         courseType={course.type}
