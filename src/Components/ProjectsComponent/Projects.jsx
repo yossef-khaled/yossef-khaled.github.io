@@ -32,7 +32,8 @@ function Projects(props) {
                          stack={project.stack}
                          role={project.myRole}
                          link={project.link}
-    
+                         textColor='#000000'
+                         fontSize='150%'
                 />
                 {project.id != PROJECTS_DATA.length && <hr className={classes.horizontalLine}/>}
             </>
@@ -46,6 +47,7 @@ function Projects(props) {
             <Container style={{marginLeft: "11%"}}>
                 {projects}
             </Container>
+            <br/>
         </div>
     );
 
