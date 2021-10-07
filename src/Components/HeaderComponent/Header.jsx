@@ -1,12 +1,19 @@
+//Import from react
 import React from 'react';
-import { PropTypes } from 'prop-types';
+
+//Import from material-ui
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
+
+//Import Header style
 import './HeaderStyle.css';
+
+//Others
+import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const styles = {
     root: {

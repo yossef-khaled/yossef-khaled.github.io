@@ -1,11 +1,20 @@
+//Import from react
 import React from 'react';
-import { PropTypes } from 'prop-types';
+
+//Improt from material-ui
 import { withStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+
+//Import from other components
+import Project from '../ProjectComponent/Project';
 import Header from '../HeaderComponent/Header';
+
+//Import data
 import bWVertically from '../../Shared/images/black-white-vertically.jpg'; 
 import PROJECTS_DATA from '../../Shared/Data/Projects';
-import Project from '../ProjectComponent/Project';
-import Container from '@material-ui/core/Container';
+
+//Others
+import { PropTypes } from 'prop-types';
 
 const styles = {
     horizontalLine: {

@@ -1,5 +1,10 @@
+//Improt from react
 import React from 'react';
+
+//Import from react-router-dom
 import { Switch, Route, Redirect } from 'react-router-dom';
+
+//Import from other components
 import Home from '../HomeCopmonent/Home';
 import Projects from '../ProjectsComponent/Projects';
 import Education from '../EducationComponent/Education';

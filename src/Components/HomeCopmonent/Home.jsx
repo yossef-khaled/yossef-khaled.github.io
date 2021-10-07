@@ -1,10 +1,19 @@
+//Import from react 
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import { PropTypes } from 'prop-types';
+
+//Improt from material-ui
 import { withStyles } from '@material-ui/core/styles';
-import bwHorizontally from '../../Shared/images/black-white-horizontally.jpg';
+import Avatar from '@material-ui/core/Avatar';
+
+//Import from other components
 import Header from '../HeaderComponent/Header';
+
+//Import data
+import bwHorizontally from '../../Shared/images/black-white-horizontally.jpg';
 import me from "../../Shared/images/me.jpg";
+
+//Others
+import { PropTypes } from 'prop-types';
 
 const styles = {
     myPhoto: {
