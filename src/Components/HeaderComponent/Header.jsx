@@ -33,11 +33,21 @@ function Header(props) {
     const { classes } = props;
 
     return(
-        <div className>
+        <div>
             <AppBar position="static">
                 <Toolbar className="header" style={{
                     backgroundColor: props.backgroundColor
                 }}>
+                    <IconButton>
+                        <Button>
+                            <Link 
+                                to="/home" className={classes.headerButton}
+                                style={{color: props.btnColor, borderColor:props.borderColor}}
+                            >
+                                Home
+                            </Link>
+                        </Button>
+                    </IconButton>
                     <IconButton>
                         <Button>
                             <Link 
