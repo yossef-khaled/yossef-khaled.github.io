@@ -33,7 +33,7 @@ const styles = {
     },
     collegeTitle: {
         fontSize: "150%",
-        marginRight: "80%"
+        marginRight: "60%"
     },
     year: {
         color: "#ffffff",
