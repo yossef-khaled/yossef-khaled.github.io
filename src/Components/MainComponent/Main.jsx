@@ -8,6 +8,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from '../HomeCopmonent/Home';
 import Projects from '../ProjectsComponent/Projects';
 import Education from '../EducationComponent/Education';
+import Contact from '../ContactComponent/Contact';
 
 function Main(props) { 
 
@@ -19,6 +20,7 @@ function Main(props) {
                 <Route path="/home" component={() => <Home onHomeRender={(imageName) => props.onComponentRender(imageName)}/>}/>
                 <Route path="/projects" component={() => <Projects onProjectsRender={(imageName) => props.onComponentRender(imageName)}/>}/>
                 <Route path="/education" component={() => <Education onEducationRender={(imageName) => props.onComponentRender(imageName)}/>}/>
+                <Route path="/contact" component={() => <Contact onContactRender={(imageName) => props.onComponentRender(imageName)}/>}/>
                 <Redirect to="/home"/>
             </Switch>
         </>
