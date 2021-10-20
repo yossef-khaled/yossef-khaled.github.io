@@ -2,8 +2,9 @@
 import React from 'react';
 
 //Improt from material-ui
-import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
+import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
 
 //Import from other components
 import Header from '../HeaderComponent/Header';
@@ -12,42 +13,88 @@ import Header from '../HeaderComponent/Header';
 import bwHorizontally from '../../Shared/images/black-white-horizontally.jpg';
 import me from "../../Shared/images/me.jpg";
 
-//Others
-import { PropTypes } from 'prop-types';
-
-const styles = {
+const useStyles = makeStyles(theme => ({
     myPhoto: {
-        marginTop: "10%",
-        marginLeft: "40%",
-        height: "15rem",
-        width: "15rem"
+        marginLeft: "auto",
+        marginRight: "auto",
+        height: "14rem",
+        width: "14rem",
+        marginTop: "rem",
+        [theme.breakpoints.up('sm')]: {
+            height: "13rem",
+            width: "13rem",
+            
+        },
+        [theme.breakpoints.down('sm')]: {
+            height: "11.5rem",
+            width: "11.5rem",
+            
+        },
+        [theme.breakpoints.up('md')]: {
+            height: "15rem",
+            width: "15rem",
+        },
+        [theme.breakpoints.up('lg')]: {
+            height: "15rem",
+            width: "15rem",
+        },
     },
-    blacked: {
-        color: "#000000"
+    personalInfo: {
+        fontSize: "105%",
+        [theme.breakpoints.up('sm')]: {
+            fontSize: "125%",
+        },
+        [theme.breakpoints.up('md')]: {
+            fontSize: "150%",  
+        },
+        [theme.breakpoints.up('lg')]: {
+            fontSize: "155%",
+        },
     }
-};
+}));
 
 
 function Home(props) {
     
-    const {classes} = props;
     props.onHomeRender(bwHorizontally);
+    const classes = useStyles();
+    
+    //To use the media query for conditional rendering we can use 'isMeduim' (or whatever screen size) as :
+    //const theme = useTheme();
+    //const isMeduim = useMediaQuery(theme.breakpoints.up('md'));
 
     return(
         <div>
-            <Header btnColor="#ffffff" borderColor="#ffffff" backgroundColor="#000000"/>
-            <h2>𝕄𝕪 𝕟𝕒𝕞𝕖 𝕚𝕤 𝕐𝕠𝕦𝕤𝕤𝕖𝕗 𝕂𝕙𝕒𝕝𝕖𝕕, 𝕀 𝕒𝕞 𝕒 𝕨𝕖𝕓 𝕕𝕖𝕧𝕖𝕝𝕠𝕡𝕖𝕣.</h2>
-            <Avatar alt="Photo of me" src={me} className={classes.myPhoto}/>
-            <h3 className={classes.blacked}> - Most of the time I play football , in my free times I do some "typin in keyboard" stuff.</h3>
+            <Header  btnColor="#ffffff" borderColor="white" backgroundColor="#000000"/>
+            <Typography variant="overline" className={classes.personalInfo}>
+                Hey, My name is Youssef khaled.
+            </Typography>
             <br/>
-            <h3 className={classes.blacked} >First computer I saw was in : 26-10-2018</h3>
+            <Typography variant="overline" className={classes.personalInfo}>
+                I'm a full stak web developer
+                <br/>
+                I use (MERN & .NET)
+            </Typography>
+            <Avatar alt="Photo of me" src={me} className={classes.myPhoto}/>
+            <Typography variant="overline" className={classes.personalInfo} style={{color: "#000000"}}>
+                Most of the time I play football , in my free times I do some "typin in keyboard" stuff.
+            </Typography>
+            <br/>
+            <Typography variant="overline" className={classes.personalInfo} style={{color: "#000000"}}> 
+                This is my portofolio, hope it is worth your attention.
+            </Typography>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
         </div>
     );
 }
 
-Home.propTypes = {
-    classes: PropTypes.object.isRequired,
-}
-
-
-export default withStyles(styles)(Home);
+export default Home;
