@@ -1,79 +1,124 @@
 //Import from material-ui
 import Container from '@material-ui/core/Container'; 
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
 
 //Import data
 import githubLogo from "../../Shared/images/github-logo.png";
 
-//Others
-import { PropTypes } from 'prop-types';
-
-const styles = {
+const useStyles = makeStyles(theme => ({
     mainContainer: {
         width: "100%",
-    },
-    projectTitle: {
-        fontSize: "150%",
+        display: "table",
     },
     titleContainer: {
-        textAlign: "right", 
+        float: "left",
+        textAlign: "right",
         display: "table-cell",
-        width: "35%",
+        fontSize: "90%",
+        [theme.breakpoints.up('md')]: {
+            width: "25%",
+        },
+        [theme.breakpoints.up('lg')]: {
+            marginLeft: "6rem",
+            width: "45%",
+            fontSize: "150%"
+        },
+        
+    },
+    projectTitle: {
+        fontSize: "105%",
+        width: "45%",
+    },
+    roleContainer: {
+        marginLeft: "5rem",
+        textAlign: "right",
+        float: "right",
+        [theme.breakpoints.up('sm')]: {
+            width: "150%"
+        },
     },
     descriptionContainer: {
-        marginLeft: "50%",
+        float: "left",
+        display: "inline-block",
         textAlign: "left",
-        display: "table-cell",
-        width: "40%",
+        [theme.breakpoints.up('md')]: {
+        },
+        [theme.breakpoints.up('lg')]: {
+            
+            width: "90%",
+            fontSize: "130%"
+        },
+    },
+    description: {
+        fontSize: "110%",
+        marginTop: "0.5rem"
+    },
+    role: {
+        fontSize: "85%",
+    },
+    stackPhrase: {
+        fontSize: "90%"
+    },
+    stack: {
+        marginTop: "1rem"
+    },
+    btnLink: {
+        textDecoration: "none",
     },
     projectButton: {
-        textDecoration: "none"
-    }
-}
+        fontSize: "65%",  
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "70%"
+        },
+    },
+}));
 
 function Project(props) {
-
-    const {classes} = props;
+    
+    const classes = useStyles();
+    
+    //To use the media query for conditional rendering we can use 'isMeduim' (or whatever screen size) as :
+    //const theme = useTheme();
+    //const isMeduim = useMediaQuery(theme.breakpoints.up('md'));
 
     return (
-         <Container className={classes.mainContainer}>
-            <Container maxWidth="sm" className={classes.titleContainer}>
-                <Typography variant="overline" className={classes.projectTitle} style={{fontSize: props.fontSize}}>
+         <div className={classes.mainContainer} style={{float: props.projectFloat}}>
+            <Container className={classes.titleContainer} style={{width: props.titleWidth, textAlign: props.titlePosition}}>
+                <Typography variant="overline" className={classes.projectTitle}>
                     {props.projectName}
                 </Typography>
-                <Typography>
-                    {props.role}
-                </Typography>
+                <br/>
+                <br/>
+                <Container className={classes.roleContainer} style={{textAlign: props.rolePosition}}>
+                    <Typography className={classes.role}>
+                        {props.role}
+                    </Typography>
+                </Container>
             </Container>
-            <Container maxWidth="sm" className={classes.descriptionContainer}>
-                <Typography variant="h6" style={{color: props.textColor, fontSize: props.fontSize}}>
+            <Container maxWidth="sm" className={classes.descriptionContainer} style={{width: props.descriptionWidth}}>
+                <Typography variant="h6" className={classes.description} style={{color: props.textColor}}>
                     {props.projectDescription}
                 </Typography>
                 <br/>
-                <Typography style={{color: props.textColor}}>
-                    <strong>
+                <strong className={classes.stackPhrase} style={{color: props.textColor}}>
                     Stack used for the project : 
-                    </strong>
-                    <br/>
+                </strong>
+                <br/>
+                <Typography className={classes.stack} style={{color: props.textColor}}>
                     {props.stack}
                 </Typography>
                 <br/>
-                <a href={props.link} className={classes.projectButton}>
-                    <Button variant="outlined" style={{backgroundColor: "white"}} disableElevation>
+                <a href={props.link} className={classes.btnLink}>
+                    <Button variant="outlined" className={classes.projectButton} style={{borderColor: props.textColor, color: props.textColor}} disableElevation>
                         See on Github
-                        <img src={githubLogo}/>
+                        <img src={props.githubLogo}/>
                     </Button>
                 </a>
             </Container>
-         </Container>
+         </div>
     );
 } 
 
-
-Project.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Project);
+export default Project;

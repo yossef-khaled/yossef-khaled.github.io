@@ -12,13 +12,15 @@ import Header from '../HeaderComponent/Header';
 //Import data
 import bWVertically from '../../Shared/images/black-white-vertically.jpg'; 
 import PROJECTS_DATA from '../../Shared/Data/Projects';
+import githubLogo from '../../Shared/images/github-logo.png';
 
 //Others
 import { PropTypes } from 'prop-types';
 
 const styles = {
     horizontalLine: {
-        width: "100%",
+        width: "75%",
+        position: "absolute",
     }
     //TODO :
     // 1- Make the background image width responsive.
@@ -41,10 +43,16 @@ function Projects(props) {
                          stack={project.stack}
                          role={project.myRole}
                          link={project.link}
+                         githubLogo={githubLogo}
                          textColor='#000000'
                          fontSize='150%'
+                         descriptionWidth="50%"
+                         titleWidth="40%"
+                         titlePosition="right"
                 />
+                <br/>
                 {project.id != PROJECTS_DATA.length && <hr className={classes.horizontalLine}/>}
+                <br/>
             </>
         )
     });
