@@ -3,11 +3,12 @@ import React from 'react';
 
 //Import from Material-ui
 import Container from '@material-ui/core/Container'; 
-import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
 
 //Import images
 import bWVertically from '../../Shared/images/black-white-vertically.jpg';
+import whiteGithubLogo from '../../Shared/images/white-github-logo.png';
 
 //Import from other components
 import Header from '../HeaderComponent/Header';
@@ -18,11 +19,56 @@ import Project from '../ProjectComponent/Project';
 import COURSES_DATA from '../../Shared/Data/Courses';
 import PROJECTS_DATA from '../../Shared/Data/Projects';
 
-//Others
-import { PropTypes } from 'prop-types';
+const useStyles = makeStyles(theme => ({
+    mainContainer: {
+        display: "table",
+    },
+    collegeSec: {
+        display: "table-cell",
+        width: "50%", 
+        float: "left",
+        textAlign: "right",
+    },
+    collegeTitle: {
+        fontSize: "100%",
+    },
+    year: {
+        color: "#ffffff",
+        fontSize: "100%",
+        float: "left",
+        
+    },
+    yearDetails: {
+        display: "block",
+        float: "left",
+        fontSize: "75%",    
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "65%",
+        }
+    },
+    coursesSec: {
+        color: "#000000",
+        display: "table-cell",
+    },
+    horizontalLine: {
+        width: "85%",
+        float: "right",
+    },
+    projectContainer: {
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "90%",
+            width: "111%",
+            marginLeft: "3rem",
+        }
+    },
+    projectsDonePhrase: {
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "110%",
+        }
+    }
+}));
 
-
-const styles = {
+/*const styles = {
     mainContainer: {
         display: "table"
     },
@@ -46,30 +92,26 @@ const styles = {
         float: "left",
         fontSize: "90%"
     },
-    courseTitle: {
-        fontSize: "150%",
-        marginLeft: "83%",
-        
-    },
     coursesSec: {
         color: "#000000",
         marginLeft: "50%",
         width: "40%",
         display: "table-cell",
     },
-    courses: {
-    },
     horizontalLine: {
         width: "85%",
         float: "right",
     }
-};
+};*/
 
 function Education(props) {
 
-    const {classes} = props;
-
     props.onEducationRender(bWVertically);
+    const classes = useStyles();
+    
+    //To use the media query for conditional rendering we can use 'isMeduim' (or whatever screen size) as :
+    //const theme = useTheme();
+    //const isMeduim = useMediaQuery(theme.breakpoints.up('md'));
 
     const courses = COURSES_DATA.map((course) => {
 
@@ -128,7 +170,7 @@ function Education(props) {
                             Specialize in CSE inside electrical engineering.
                             <br/>
                             <br/>
-                            <Typography style={{float: "left", fontSize: "120%"}}>
+                            <Typography className={classes.projectsDonePhrase}>
                                 Projects I done back that year 
                             </Typography>
                             <br/>
@@ -136,17 +178,23 @@ function Education(props) {
                         <br/>
                         {PROJECTS_DATA.filter((project) => project.type.includes('2018-2019')).map((project) => {
                             return (
-                                <>
+                                <Container className={classes.projectContainer}>
+                                    <br/>
                                     {project.id != 8 && <hr style={{width: '70%',}}/>}
                                     <Project projectName={project.name}
                                              projectDescription={project.description}
                                              stack={project.stack}
                                              role={project.myRole}
                                              link={project.link}
-                                             textColor="#ffffff"
-                                             fontSize='95%'
+                                             githubLogo={whiteGithubLogo}
+                                             textColor= "#ffffff"
+                                             descriptionWidth="100%"
+                                             titleWidth="110%"
+                                             titlePosition="left"
+                                             rolePosition="center"
+                                             projectFloat="right"
                                     />
-                                </>
+                                </Container>
                             )
                         })}
                         <br/>
@@ -167,28 +215,33 @@ function Education(props) {
                         <br/>
                             {PROJECTS_DATA.filter((project) => project.type.includes('2019-2020')).map((project) => {
                                 return (
-                                    <>
-                                        {project.id != 1 && <hr style={{width: '70%'}}/>}
+                                    <Container className={classes.projectContainer}>
+                                        {project.id != 1 && <hr style={{width: '85%', marginTop: "2rem"}}/>}
                                         <Project projectName={project.name}
                                                  projectDescription={project.description}
                                                  stack={project.stack}
                                                  role={project.myRole}
                                                  link={project.link}
-                                                 textColor="#ffffff"
-                                                 fontSize='95%'
+                                                 githubLogo={whiteGithubLogo}
+                                                 textColor= "#ffffff"
+                                                 descriptionWidth="100%"
+                                                 titleWidth="110%"
+                                                 titlePosition="center"
+                                                 rolePosition="center"
+                                                 projectFloat="right"
                                         />
                                         <br/>
-                                    </>
+                                    </Container>
                                 )
                             })}
                         <br/>
                 </Container>
             </Container>
             <Container className={classes.coursesSec}>
-                <Typography variant="overline" className={classes.courseTitle}>
+                <Typography variant="overline" className="courseTitle">
                         Courses  
                 </Typography>
-                <Container className={classes.courses}>
+                <Container>
                     {courses}
                 </Container>
             </Container>
@@ -196,8 +249,4 @@ function Education(props) {
     );
 }
 
-Education.propTypes = {
-    classes : PropTypes.object.isRequired,
-}
-
-export default withStyles(styles)(Education);
+export default Education;
