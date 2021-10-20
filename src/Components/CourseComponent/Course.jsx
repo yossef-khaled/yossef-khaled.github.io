@@ -8,12 +8,27 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-
-//Import style file 
-import './CourseStyle.css'
+import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
 
 //Others
 import { Lightbox} from 'react-modal-image';
+
+const useStyles = makeStyles(theme => ({
+    mainContainer: {
+        color: "#000000",
+        textAlign: "right",
+        marginLeft: "6%",
+        width: "50%",
+        float: "right",
+        backgroundSize: "100px 100px", /* or contain depending on what you want */
+        backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat",
+        textAlign: "right",
+        backgroundColor: "red",
+        display: "block",
+        display: "table-cell"
+    }
+}));
 
 function Course(props) {
 
@@ -22,12 +37,18 @@ function Course(props) {
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const classes = useStyles();
+    
+    //To use the media query for conditional rendering we can use 'isMeduim' (or whatever screen size) as :
+    //const theme = useTheme();
+    //const isMeduim = useMediaQuery(theme.breakpoints.up('md'));
     
     return(
         <>
-            <Container className='mainContainer'>
+            <Container className={classes.mainContainer}>
                 <br/>
-                <Typography variant="overline" style={{fontSize: '120%', color: '#aaa9a9'}}>
+                <Typography variant="overline">
                     -{props.courseName}
                 </Typography>
                 <br/>
@@ -41,7 +62,7 @@ function Course(props) {
                 </a>
                 <br/>
                 <br/>
-                <Typography variant="overline" style={{fontSize: "90%"}}>
+                <Typography variant="overline">
                     STARTED ON
                 </Typography>
                 <br/>
@@ -50,7 +71,7 @@ function Course(props) {
                 </Typography>
                 <br/>
                 <br/>
-                <Typography variant="overline" style={{fontSize: "90%"}}>
+                <Typography variant="overline">
                     TOOK ME
                 </Typography>
                 <br/>
@@ -59,7 +80,7 @@ function Course(props) {
                 </Typography>
                 <br/>
                 <br/>
-                <Typography variant="overline" style={{fontSize: "90%"}}>
+                <Typography variant="overline">
                     The course is all about 
                 </Typography>
                 <br/>
