@@ -2,20 +2,57 @@
 import React from 'react';
 
 //Import from material-ui
-import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
-
-//Import Header style
-import './HeaderStyle.css';
+import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
 
 //Others
-import { PropTypes } from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';  
 
-const styles = {
+const useStyles = makeStyles(theme => ({
+    appBar: {
+        width: "95%",
+        boxShadow: "none",
+        [theme.breakpoints.down('sm')]: {
+            flexGrow: "1"
+        },
+        [theme.breakpoints.up('sm')]: {
+            flexGrow: "1"
+        },
+    },
+    header: {
+        [theme.breakpoints.down('sm')]: {
+            width: "100%",
+            fontSize: "45%",
+            marginRight: "rem",
+        },
+    },
+    headerButton : {
+        borderRadius: "0.25em",
+        borderStyle: "solid",
+        padding: "0.5em",
+        borderWidth: "thin",
+        display: "flex",
+        [theme.breakpoints.down('sm')]: {
+            width: "45%",
+            fontSize: "38%",
+        },
+        [theme.breakpoints.up('sm')]: {
+            width: "100%",
+            fontSize: "50%",
+            
+        },
+    },
+    btnLink : {
+        [theme.breakpoints.down('sm')]: {
+            
+        },
+    }
+}));
+
+/*const styles = {
     root: {
         flexGrow: "1",
     },
@@ -26,44 +63,54 @@ const styles = {
         padding: "0.5em",
         borderWidth: "thin"
     }
-}
+}*/
 
 function Header(props) {
 
-    const { classes } = props;
+    const classes = useStyles();
+    
+    //To use the media query for  conditional rendering we can use 'isMeduim' (or whatever screen size) as :
+    //const theme = useTheme();
+    //const isMeduim = useMediaQuery(theme.breakpoints.up('md'));
 
+
+    console.log(props.borderColor);
     return(
         <div>
-            <AppBar position="static">
-                <Toolbar className="header" style={{
+            <AppBar position="static" className={classes.appBar}>
+                <Toolbar className={classes.header} style={{
                     backgroundColor: props.backgroundColor
                 }}>
                     <IconButton>
-                        <Button>
+                        <Button className={classes.headerButton}>
                             <Link 
-                                to="/home" className={classes.headerButton}
-                                style={{color: props.btnColor, borderColor:props.borderColor}}
+                                to="/home" 
+                                className={classes.btnLink}
+                                style={{color: props.btnColor, borderColor: props.borderColor, textDecoration: "none"}}
                             >
                                 Home
                             </Link>
                         </Button>
                     </IconButton>
                     <IconButton>
-                        <Button>
+                        <Button className={classes.headerButton}>
                             <Link 
-                                to="/education" className={classes.headerButton}
-                                style={{color: props.btnColor, borderColor:props.borderColor}}
+                                to="/education"
+                                className={classes.btnLink}
+                                style={{color: props.btnColor, borderColor:props.borderColor, textDecoration: "none"}}
                             >
                                 Education
                             </Link>
                         </Button>
                     </IconButton>
                     <IconButton>
-                        <Button>
+                        <Button className={classes.headerButton}>
                             <Link 
-                                to="/projects" className={classes.headerButton}
+                                to="/projects" 
+                                className={classes.btnLink}
                                 style={{color: props.btnColor,
                                         borderColor: props.borderColor,
+                                        textDecoration: "none"
                                     }}
                             >
                                 Projects
@@ -71,10 +118,11 @@ function Header(props) {
                         </Button>
                     </IconButton>
                     <IconButton>
-                        <Button>
+                        <Button className={classes.headerButton}>
                             <Link 
-                                to="/contact" className={classes.headerButton}
-                                style={{color: props.btnColor, borderColor:props.borderColor}}
+                                to="/contact" 
+                                className={classes.btnLink}
+                                style={{color: props.btnColor, borderColor:props.borderColor, textDecoration: "none"}}
                             >
                                 Contact
                             </Link>
@@ -87,8 +135,4 @@ function Header(props) {
     )
 };
 
-Header.propTypes = {
-    classes: PropTypes.object.isRequired,
-}
-
-export default withStyles(styles)(Header);
+export default Header;
