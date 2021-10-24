@@ -68,7 +68,8 @@ const useStyles = makeStyles(theme => ({
         textDecoration: "none",
     },
     projectButton: {
-        fontSize: "65%",  
+        fontSize: "65%", 
+        marginBottom: "1rem", 
         [theme.breakpoints.down('sm')]: {
             fontSize: "70%"
         },

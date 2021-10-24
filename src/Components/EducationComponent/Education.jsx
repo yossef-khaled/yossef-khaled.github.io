@@ -8,6 +8,7 @@ import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
 
 //Import images
 import bWVertically from '../../Shared/images/black-white-vertically.jpg';
+import bWHorizontally from '../../Shared/images/black-white-horizontally.jpg';
 import whiteGithubLogo from '../../Shared/images/white-github-logo.png';
 
 //Import from other components
@@ -28,42 +29,91 @@ const useStyles = makeStyles(theme => ({
         width: "50%", 
         float: "left",
         textAlign: "right",
+        backgroundColor: "#000000",
+        [theme.breakpoints.down('sm')]: {
+            width: "100%",
+            textAlign: "center",
+        }
     },
     collegeTitle: {
         fontSize: "100%",
+        fontSize: "140%",
+        float: "left",
+        marginRight: "25rem",
+        [theme.breakpoints.down('sm')]: {
+            width: "100%",
+            textAlign: "center",
+        }
     },
     year: {
         color: "#ffffff",
         fontSize: "100%",
         float: "left",
+        marginRight: "20rem",
+        fontSize: "110%",
+        [theme.breakpoints.down('sm')]: {
+            width: "100%",
+            textAlign: "center",
+        }
         
     },
     yearDetails: {
         display: "block",
         float: "left",
-        fontSize: "75%",    
+        fontSize: "85%",    
         [theme.breakpoints.down('sm')]: {
-            fontSize: "65%",
+            width: "100%",
+            textAlign: "center",
         }
     },
     coursesSec: {
+        [theme.breakpoints.down('sm')]: {
+            width: "100%",
+            float: "center"
+        },
+        [theme.breakpoints.up('sm')]: {
+            color: "#000000",
+            display: "table-cell",  
+        },
+    },
+    coursesTitle: {
         color: "#000000",
-        display: "table-cell",
+        fontSize: "140%",
+        float: "right",
+        [theme.breakpoints.down('sm')]: {
+            width: "100%",
+            float: "center",
+            fontSize: "120%"
+        }
     },
     horizontalLine: {
-        width: "85%",
+        width: "100%",
         float: "right",
+        [theme.breakpoints.down('sm')]: {
+            width: "100%",
+            float: "center"
+        }
     },
     projectContainer: {
         [theme.breakpoints.down('sm')]: {
             fontSize: "90%",
-            width: "111%",
-            marginLeft: "3rem",
+            width: "100%",
+            textAlign: "center",
+            float: "center"
         }
     },
     projectsDonePhrase: {
+        textAlign: "center",
         [theme.breakpoints.down('sm')]: {
             fontSize: "110%",
+        }
+    },
+    reserveSpace: {
+        color: "#000000",
+        marginTop: "478rem",
+        fontSize: "0.5%",
+        [theme.breakpoints.down('sm')]: {
+            display: "none"
         }
     }
 }));
@@ -106,12 +156,15 @@ const useStyles = makeStyles(theme => ({
 
 function Education(props) {
 
-    props.onEducationRender(bWVertically);
+    props.onEducationRender();
+
     const classes = useStyles();
     
-    //To use the media query for conditional rendering we can use 'isMeduim' (or whatever screen size) as :
+    //To use the media query for conditional rendering we can use 'isSmall' (or whatever screen size) as :
     //const theme = useTheme();
-    //const isMeduim = useMediaQuery(theme.breakpoints.up('md'));
+    //const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
+
+    
 
     const courses = COURSES_DATA.map((course) => {
 
@@ -152,7 +205,7 @@ function Education(props) {
                             Joined faculty of engineering, zagazig university. 
                         </Typography>
                         <br/>
-                        <hr className={classes.horizontalLine} style={{float: "left"}}/>
+                        <hr className={classes.horizontalLine}/>
                         <Typography variant="overline" className={classes.year}>
                             2016 - 2018
                         </Typography>
@@ -161,7 +214,7 @@ function Education(props) {
                             Specialize in electrical engineering.
                         </Typography>
                         <br/>
-                        <hr className={classes.horizontalLine} style={{float: "left"}}/>
+                        <hr className={classes.horizontalLine}/>
                         <Typography variant="overline" className={classes.year}>
                             2018 - 2019 
                         </Typography>
@@ -179,8 +232,9 @@ function Education(props) {
                         {PROJECTS_DATA.filter((project) => project.type.includes('2018-2019')).map((project) => {
                             return (
                                 <Container className={classes.projectContainer}>
+                                    {project.id !== 8 && <hr className={classes.horizontalLine}/>}
                                     <br/>
-                                    {project.id != 8 && <hr style={{width: '70%',}}/>}
+                                    <br/>
                                     <Project projectName={project.name}
                                              projectDescription={project.description}
                                              stack={project.stack}
@@ -198,7 +252,7 @@ function Education(props) {
                             )
                         })}
                         <br/>
-                        <hr className={classes.horizontalLine} style={{float: "left"}}/>
+                        <hr className={classes.horizontalLine}/>
                         <Typography variant="overline" className={classes.year}>
                             2019 - 2020 
                         </Typography>
@@ -207,7 +261,7 @@ function Education(props) {
                             Bachelore's Year, and the year I learned the most about our track.
                             <br/>
                             <br/>
-                            <Typography style={{float: "left", fontSize: "120%"}}>
+                            <Typography className={classes.projectsDonePhrase}>
                                 Projects I done back that year 
                             </Typography>
                             <br/>
@@ -216,7 +270,9 @@ function Education(props) {
                             {PROJECTS_DATA.filter((project) => project.type.includes('2019-2020')).map((project) => {
                                 return (
                                     <Container className={classes.projectContainer}>
-                                        {project.id != 1 && <hr style={{width: '85%', marginTop: "2rem"}}/>}
+                                        {project.id !== 1 && <hr className={classes.horizontalLine}/>}
+                                        <br/>
+                                        <br/>
                                         <Project projectName={project.name}
                                                  projectDescription={project.description}
                                                  stack={project.stack}
@@ -225,8 +281,8 @@ function Education(props) {
                                                  githubLogo={whiteGithubLogo}
                                                  textColor= "#ffffff"
                                                  descriptionWidth="100%"
-                                                 titleWidth="110%"
-                                                 titlePosition="center"
+                                                 titleWidth="90%"
+                                                 titlePosition="left"
                                                  rolePosition="center"
                                                  projectFloat="right"
                                         />
@@ -234,17 +290,21 @@ function Education(props) {
                                     </Container>
                                 )
                             })}
-                        <br/>
                 </Container>
+                <h1 className={classes.reserveSpace}>
+                    hi
+                </h1>
+                <br/>
             </Container>
             <Container className={classes.coursesSec}>
-                <Typography variant="overline" className="courseTitle">
+                <Typography variant="overline" className={classes.coursesTitle}>
                         Courses  
                 </Typography>
                 <Container>
                     {courses}
                 </Container>
             </Container>
+            
         </React.Fragment>
     );
 }

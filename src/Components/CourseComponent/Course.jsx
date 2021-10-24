@@ -18,15 +18,63 @@ const useStyles = makeStyles(theme => ({
         color: "#000000",
         textAlign: "right",
         marginLeft: "6%",
-        width: "50%",
+        width: "100%",
         float: "right",
         backgroundSize: "100px 100px", /* or contain depending on what you want */
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
-        textAlign: "right",
-        backgroundColor: "red",
         display: "block",
-        display: "table-cell"
+        display: "table-cell",
+        marginBottom: "2rem",
+        [theme.breakpoints.down('sm')]: {
+            textAlign: "center"
+        }
+    },
+    courseName: {
+        fontSize: "140%",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "110%"
+        }
+    },
+    organizationContainer: {
+        fontSize: "120%",
+        [theme.breakpoints.down('sm')]: {
+            
+        }
+    },
+    courseOrganization: {
+        fontSize: "100%",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "80%"
+        }
+    },
+    start:{
+        fontSize: "100%",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "100%"
+        }
+    },
+    date: {
+        fontSize: "100%",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "100%"
+        }
+    },
+    duration: {
+        fontSize: "100%",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "100%"
+        }
+    },
+    details: {
+        fontSize: "100%",
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "100%"
+        }
+    },
+    horizontalLine: {
+        display: "inline-block",
+        width: "100%",
     }
 }));
 
@@ -48,30 +96,32 @@ function Course(props) {
         <>
             <Container className={classes.mainContainer}>
                 <br/>
-                <Typography variant="overline">
+                <Typography variant="overline" className={classes.courseName}>
                     -{props.courseName}
                 </Typography>
                 <br/>
                 <br/>
-                <Typography variant="overline">
-                    Organization {" "}
-                </Typography>
+                <Container className={classes.organizationContainer}>
+                    <Typography variant="overline" className={classes.courseOrganization}>
+                        Organization {" "}
+                    </Typography>
+                    <br/>
+                    <a href={props.organization == 'ITI' ? 'https://www.iti.gov.eg' : `https://www.${props.organization}.com`}>
+                            <img src={`${props.organizationImg}`}/>
+                    </a>
+                </Container>
                 <br/>
-                <a href={props.organization == 'ITI' ? 'https://www.iti.gov.eg' : `https://www.${props.organization}.com`}>
-                        <img src={`${props.organizationImg}`}/>
-                </a>
                 <br/>
-                <br/>
-                <Typography variant="overline">
+                <Typography variant="overline" className={classes.start}>
                     STARTED ON
                 </Typography>
                 <br/>
-                <Typography variant="overline">
+                <Typography variant="overline" className={classes.date}>
                     {props.courseDate}
                 </Typography>
                 <br/>
                 <br/>
-                <Typography variant="overline">
+                <Typography variant="overline" className={classes.duration}>
                     TOOK ME
                 </Typography>
                 <br/>
@@ -80,7 +130,7 @@ function Course(props) {
                 </Typography>
                 <br/>
                 <br/>
-                <Typography variant="overline">
+                <Typography variant="overline" className={classes.details}>
                     The course is all about 
                 </Typography>
                 <br/>
@@ -97,7 +147,7 @@ function Course(props) {
                 <br/>
                 <br/>
                 {props.certificate ? 
-                <Card style={{width: "50%", display: "inline-block"}}>
+                <Card>
                     <CardMedia
                            component="img"
                            height="150"
@@ -132,7 +182,7 @@ function Course(props) {
                 {
                     return(
                         <>
-                            {course.id == 0 && <hr className='horizontalLine'/>}
+                            {course.id !== 0 && <hr className={classes.horizontalLine}/>}
                             <Course key={course.id}
                                     courseName={course.name}
                                     organization={course.organization}
@@ -145,7 +195,6 @@ function Course(props) {
                                     credentialId={course.credentialId}
                                     certificate={course.certificate}
                             />
-                            {course.id != props.courses.length - 1 && <hr className='horizontalLine'/>}
 
                         </>
                     )
