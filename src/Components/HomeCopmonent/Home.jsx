@@ -11,7 +11,7 @@ import Header from '../HeaderComponent/Header';
 
 //Import data
 import bwHorizontally from '../../Shared/images/black-white-horizontally.jpg';
-import me from "../../Shared/images/me.jpg";
+import me from "../../Shared/images/me.png";
 
 const useStyles = makeStyles(theme => ({
     myPhoto: {
