@@ -7,8 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
 
 //Import images
-import bWVertically from '../../Shared/images/black-white-vertically.jpg';
-import bWHorizontally from '../../Shared/images/black-white-horizontally.jpg';
 import whiteGithubLogo from '../../Shared/images/white-github-logo.png';
 
 //Import from other components
@@ -39,22 +37,27 @@ const useStyles = makeStyles(theme => ({
         fontSize: "100%",
         fontSize: "140%",
         float: "left",
-        marginRight: "25rem",
         [theme.breakpoints.down('sm')]: {
+            marginRight: "0rem",
             width: "100%",
             textAlign: "center",
+        },
+        [theme.breakpoints.up('sm')]: {
+             marginRight: "25rem",
         }
     },
     year: {
         color: "#ffffff",
         fontSize: "100%",
         float: "left",
-        marginRight: "20rem",
         fontSize: "110%",
         [theme.breakpoints.down('sm')]: {
             width: "100%",
             textAlign: "center",
-        }
+        },
+        [theme.breakpoints.up('sm')]: {
+            marginRight: "20rem",
+       }
         
     },
     yearDetails: {
