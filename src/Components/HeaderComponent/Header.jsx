@@ -13,10 +13,9 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
     appBar: {
-        width: "95%",
         boxShadow: "none",
         [theme.breakpoints.down('sm')]: {
-            flexGrow: "1"
+            flexGrow: "1",
         },
         [theme.breakpoints.up('sm')]: {
             flexGrow: "1"
@@ -24,9 +23,7 @@ const useStyles = makeStyles(theme => ({
     },
     header: {
         [theme.breakpoints.down('sm')]: {
-            width: "100%",
             fontSize: "45%",
-            marginRight: "rem",
         },
     },
     headerButton : {
@@ -38,6 +35,7 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             width: "45%",
             fontSize: "38%",
+            textAlign: "center"
         },
         [theme.breakpoints.up('sm')]: {
             width: "100%",
@@ -81,6 +79,7 @@ function Header(props) {
                 <Toolbar className={classes.header} style={{
                     backgroundColor: props.backgroundColor
                 }}>
+                    
                     <IconButton>
                         <Button className={classes.headerButton}>
                             <Link 
