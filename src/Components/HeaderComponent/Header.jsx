@@ -22,6 +22,8 @@ const useStyles = makeStyles(theme => ({
         },
     },
     header: {
+        position: "sticky",
+        top: "0px",
         [theme.breakpoints.down('sm')]: {
             fontSize: "45%",
         },
@@ -74,7 +76,7 @@ function Header(props) {
 
     console.log(props.borderColor);
     return(
-        <div>
+        <div style={{position: "sticky", top: "0"}}>
             <AppBar position="static" className={classes.appBar}>
                 <Toolbar className={classes.header} style={{
                     backgroundColor: props.backgroundColor
