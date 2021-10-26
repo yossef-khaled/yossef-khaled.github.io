@@ -1,5 +1,5 @@
 //Import from react 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 //Improt from material-ui
 import Avatar from '@material-ui/core/Avatar';
@@ -12,6 +12,10 @@ import Header from '../HeaderComponent/Header';
 //Import data
 import bwHorizontally from '../../Shared/images/black-white-horizontally.jpg';
 import me from "../../Shared/images/me.png";
+import myCV from '../../Shared/Data/Youssef-Khaled-CV.pdf';
+
+//Import style
+import './HomeStyle.css';
 
 const useStyles = makeStyles(theme => ({
     myPhoto: {
@@ -50,15 +54,39 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('lg')]: {
             fontSize: "155%",
         },
+    },
+    downloadCVContainer: {
+        float: "right",
+        marginRight: "2rem",
+        backgroundColor: "#000000",
+        padding: "2rem",
+        borderRadius: "0.35rem",
+        [theme.breakpoints.down('sm')]: {
+            marginRight: "0.25rem"  
+        },
+    },
+    downloadCV: {
+        fontSize: "100%",
     }
 }));
 
 
 function Home(props) {
-    
+
+    const [fade, setFade] = useState('fadeIn');
+
     props.onHomeRender(bwHorizontally);
     const classes = useStyles();
     
+    console.log(`Fade initially is ${fade}`);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setFade('fadeOut');
+            console.log(`Fade after 4 seconds is ${fade}`);
+        }, 7000)
+    });
+
     //To use the media query for conditional rendering we can use 'isMeduim' (or whatever screen size) as :
     //const theme = useTheme();
     //const isMeduim = useMediaQuery(theme.breakpoints.up('md'));
@@ -84,8 +112,15 @@ function Home(props) {
                 This is my portfolio, thanks for stoping by.
             </Typography>
             <br/>
-            <br/>
-            <br/>
+            <div className={fade}>
+                <div className={classes.downloadCVContainer}>
+                    <a href={myCV} download style={{color: "#ffffff", textDecoration: "none"}}>
+                        <Typography variant="overline" className={classes.downloadCV}>
+                            Download my cv
+                        </Typography>
+                    </a>
+                </div>
+            </div>
             <br/>
             <br/>
             <br/>
