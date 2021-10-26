@@ -21,11 +21,13 @@ const useStyles = makeStyles(theme => ({
             width: "25%",
         },
         [theme.breakpoints.up('lg')]: {
-            marginLeft: "6rem",
+            marginLeft: "4.5rem",
             width: "45%",
             fontSize: "150%"
         },
-        
+        [theme.breakpoints.between(2500,2600)]: {
+            marginLeft: "0rem",
+        },
     },
     projectTitle: {
         fontSize: "105%",
@@ -43,8 +45,6 @@ const useStyles = makeStyles(theme => ({
         float: "left",
         display: "inline-block",
         textAlign: "left",
-        [theme.breakpoints.up('md')]: {
-        },
         [theme.breakpoints.up('lg')]: {
             
             width: "90%",
@@ -88,7 +88,7 @@ function Project(props) {
          <div className={classes.mainContainer} style={{float: props.projectFloat}}>
             <Container className={classes.titleContainer} style={{width: props.titleWidth, textAlign: props.titlePosition}}>
                 <Typography variant="overline" className={classes.projectTitle}>
-                    {props.projectName}
+                    ☰ {props.projectName}
                 </Typography>
                 <br/>
                 <br/>
