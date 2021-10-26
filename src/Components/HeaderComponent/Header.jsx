@@ -22,8 +22,6 @@ const useStyles = makeStyles(theme => ({
         },
     },
     header: {
-        position: "sticky",
-        top: "0px",
         [theme.breakpoints.down('sm')]: {
             fontSize: "45%",
         },
