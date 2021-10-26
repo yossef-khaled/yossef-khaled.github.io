@@ -205,7 +205,7 @@ function Contact(props) {
                 <a href="mailto:yossef.k.y333@gmail.com" style={{textDecoration: "none"}}>
                     <Mail className={classes.mailLogo}/>
                     <Typography variant="overline" className={classes.mailText}>
-                        Gmail
+                        Email
                     </Typography>
                 </a>
                 <h1 className={classes.reserveSpace}>

@@ -97,10 +97,8 @@ function Course(props) {
             <Container className={classes.mainContainer}>
                 <br/>
                 <Typography variant="overline" className={classes.courseName}>
-                    -{props.courseName}
+                    {props.courseName}
                 </Typography>
-                <br/>
-                <br/>
                 <Container className={classes.organizationContainer}>
                     <Typography variant="overline" className={classes.courseOrganization}>
                         Organization {" "}
@@ -137,7 +135,7 @@ function Course(props) {
                 {Array.isArray(props.courseDetails) ? props.courseDetails.map((detail) => {
                     return(
                         <>
-                            <Typography variant="overline"> - {detail}</Typography>
+                            <Typography variant="overline"> • {detail}</Typography>
                             <br/>
                         </>
                     )

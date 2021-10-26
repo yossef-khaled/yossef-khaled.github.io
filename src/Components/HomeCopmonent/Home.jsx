@@ -71,7 +71,7 @@ function Home(props) {
             </Typography>
             <br/>
             <Typography variant="overline" className={classes.personalInfo}>
-                I'm a full stak web developer
+                I'm a full stack web developer
                 <br/>
                 I use (MERN & .NET)
             </Typography>
@@ -81,7 +81,7 @@ function Home(props) {
             </Typography>
             <br/>
             <Typography variant="overline" className={classes.personalInfo} style={{color: "#000000"}}> 
-                This is my portofolio, hope it is worth your attention.
+                This is my portfolio, thanks for stoping by.
             </Typography>
             <br/>
             <br/>

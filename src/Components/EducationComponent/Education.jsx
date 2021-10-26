@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             width: "100%",
             textAlign: "center",
-        }
+        },
     },
     collegeTitle: {
         fontSize: "100%",
@@ -48,9 +48,9 @@ const useStyles = makeStyles(theme => ({
     },
     year: {
         color: "#ffffff",
-        fontSize: "100%",
         float: "left",
-        fontSize: "110%",
+        fontSize: "130%",
+        fontWeight: "bold",
         [theme.breakpoints.down('sm')]: {
             width: "100%",
             textAlign: "center",
@@ -107,6 +107,7 @@ const useStyles = makeStyles(theme => ({
     },
     projectsDonePhrase: {
         textAlign: "center",
+        fontStyle: "italic",
         [theme.breakpoints.down('sm')]: {
             fontSize: "110%",
         }
@@ -120,42 +121,6 @@ const useStyles = makeStyles(theme => ({
         }
     }
 }));
-
-/*const styles = {
-    mainContainer: {
-        display: "table"
-    },
-    collegeSec: {
-        width: "40%",
-        marginRight: "50%",
-        display: "table-cell",
-    },
-    collegeTitle: {
-        fontSize: "150%",
-        marginRight: "60%"
-    },
-    year: {
-        color: "#ffffff",
-        fontSize: "150%",
-        marginRight: "70%",
-        float: "left",
-        
-    },
-    yearDetails: {
-        float: "left",
-        fontSize: "90%"
-    },
-    coursesSec: {
-        color: "#000000",
-        marginLeft: "50%",
-        width: "40%",
-        display: "table-cell",
-    },
-    horizontalLine: {
-        width: "85%",
-        float: "right",
-    }
-};*/
 
 function Education(props) {
 
@@ -203,25 +168,20 @@ function Education(props) {
                         <Typography variant="overline" className={classes.year}>
                             2015 - 2016 
                         </Typography>
-                        <br/>
                         <Typography variant="overline" className={classes.yearDetails}>
                             Joined faculty of engineering, zagazig university. 
                         </Typography>
-                        <br/>
                         <hr className={classes.horizontalLine}/>
                         <Typography variant="overline" className={classes.year}>
                             2016 - 2018
                         </Typography>
-                        <br/>
                         <Typography variant="overline" className={classes.yearDetails}>
                             Specialize in electrical engineering.
                         </Typography>
-                        <br/>
                         <hr className={classes.horizontalLine}/>
                         <Typography variant="overline" className={classes.year}>
                             2018 - 2019 
                         </Typography>
-                        <br/>
                         <Typography variant="overline" className={classes.yearDetails}>
                             Specialize in CSE inside electrical engineering.
                             <br/>
