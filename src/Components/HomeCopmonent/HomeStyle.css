@@ -2,7 +2,7 @@
     animation: fadeIn 3s;
     position: sticky;
     position: -webkit-sticky;
-    top: 0;
+    bottom: 0;
 }
 
 @keyframes fadeIn {
@@ -12,4 +12,7 @@
 .fadeOut {
     opacity: 0;
     transition: opacity 1s ease;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
 }

@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
         },
     },
     personalInfo: {
-        fontSize: "105%",
+        fontSize: "95%",
         [theme.breakpoints.up('sm')]: {
             fontSize: "125%",
         },
