@@ -14,12 +14,15 @@ import bwDiagonally from '../../Shared/images/black-white-diagonally.png';
 import Header from '../HeaderComponent/Header';
 
 const useStyles = makeStyles(theme => ({
-    reachMeontainer: {
+    reachMeContainer: {
         [theme.breakpoints.down('sm')]: {
             marginLeft: "5rem",
             marginTop: "30%",
             width: "80%",
             fontSize: "90%"
+        },
+        [theme.breakpoints.between(700, 800)]: {
+            marginLeft: "6.5rem",
         },
         [theme.breakpoints.between(800,1000)]: {
             marginLeft: "9rem",
@@ -42,6 +45,9 @@ const useStyles = makeStyles(theme => ({
         fontSize: "400%",
         [theme.breakpoints.down('sm')]: {
             marginLeft: "5.5rem",
+        },
+        [theme.breakpoints.between(700, 800)]: {
+            marginLeft: "4.5rem",
         },
         [theme.breakpoints.between(800,1000)]: {
             marginLeft: "8rem"
@@ -69,6 +75,9 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             marginRight: "1rem"
         },
+        [theme.breakpoints.between(700, 800)]: {
+            marginRight: "1rem",
+        },
         [theme.breakpoints.between(800,1000)]: {
             marginLeft: "5rem"
         },
@@ -81,6 +90,9 @@ const useStyles = makeStyles(theme => ({
         fontSize: "150%",
         [theme.breakpoints.down('sm')]: {
             
+        },
+        [theme.breakpoints.between(700, 800)]: {
+            marginRight: "1rem",
         },
         [theme.breakpoints.between(800,1000)]: {
             marginRight: "2.25rem"
@@ -108,6 +120,9 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             
         },
+        [theme.breakpoints.between(700, 800)]: {
+            marginRight: "1.5rem",
+        },
         [theme.breakpoints.between(800,1000)]: {
             marginRight: "2.5rem"
         },
@@ -133,6 +148,9 @@ const useStyles = makeStyles(theme => ({
         fontSize: "150%",
         [theme.breakpoints.down('sm')]: {
             marginRight: "8rem"
+        },
+        [theme.breakpoints.between(700, 800)]: {
+            marginRight: "9rem",
         },
         [theme.breakpoints.between(800,1000)]: {
             marginRight: "5rem"        
@@ -164,7 +182,7 @@ function Contact(props) {
     return(
         <>
             <Header btnColor="#ffffff" borderColor="#ffffff" backgroundColor="#000000"/>
-            <Container className={classes.reachMeontainer}>
+            <Container className={classes.reachMeContainer}>
                 <Typography variant='overline' className={classes.reachMeVia}>
                     Reach {" "}
                 </Typography>

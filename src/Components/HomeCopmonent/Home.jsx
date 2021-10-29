@@ -62,8 +62,15 @@ const useStyles = makeStyles(theme => ({
         padding: "2rem",
         borderRadius: "0.35rem",
         [theme.breakpoints.down('sm')]: {
-            marginRight: "0.25rem"  
+            marginRight: "0.25rem"
         },
+        [theme.breakpoints.between(700, 800)]: {
+            float: "none",
+            marginRight: "15rem",
+            marginLeft: "15rem",
+            textAlign: "center"
+        },
+        
     },
     downloadCV: {
         fontSize: "100%",
@@ -78,12 +85,9 @@ function Home(props) {
     props.onHomeRender(bwHorizontally);
     const classes = useStyles();
     
-    console.log(`Fade initially is ${fade}`);
-
     useEffect(() => {
         setTimeout(() => {
             setFade('fadeOut');
-            console.log(`Fade after 4 seconds is ${fade}`);
         }, 7000)
     });
 
@@ -109,7 +113,7 @@ function Home(props) {
             </Typography>
             <br/>
             <Typography variant="overline" className={classes.personalInfo} style={{color: "#000000"}}> 
-                This is my portfolio, thanks for stoping by.
+                This is my portfolio, thanks for stopping by.
             </Typography>
             <br/>
             <div className={fade}>
