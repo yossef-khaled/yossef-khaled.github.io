@@ -23,10 +23,10 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.up('lg')]: {
             marginLeft: "4.5rem",
             width: "45%",
-            fontSize: "150%"
+            fontSize: "150%",
         },
-        [theme.breakpoints.between(2500,2600)]: {
-            marginLeft: "0rem",
+        [theme.breakpoints.between(1000,2600)]: {
+            marginLeft: "6.5rem"
         },
     },
     projectTitle: {
@@ -46,7 +46,6 @@ const useStyles = makeStyles(theme => ({
         display: "inline-block",
         textAlign: "left",
         [theme.breakpoints.up('lg')]: {
-            
             width: "90%",
             fontSize: "130%"
         },
