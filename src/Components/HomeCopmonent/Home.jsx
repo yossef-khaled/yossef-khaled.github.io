@@ -62,7 +62,8 @@ const useStyles = makeStyles(theme => ({
         padding: "2rem",
         borderRadius: "0.35rem",
         [theme.breakpoints.down('sm')]: {
-            marginRight: "0.25rem"
+            marginRight: "5rem",
+            marginLeft: "5rem"
         },
         [theme.breakpoints.between(700, 800)]: {
             float: "none",
