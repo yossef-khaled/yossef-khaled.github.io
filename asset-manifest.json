@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.b85caa77.chunk.css",
-    "main.js": "/static/js/main.ce2ae0d3.chunk.js",
-    "main.js.map": "/static/js/main.ce2ae0d3.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.eb30a6a0.js",
-    "runtime-main.js.map": "/static/js/runtime-main.eb30a6a0.js.map",
-    "static/js/2.b9e1cd11.chunk.js": "/static/js/2.b9e1cd11.chunk.js",
-    "static/js/2.b9e1cd11.chunk.js.map": "/static/js/2.b9e1cd11.chunk.js.map",
-    "static/js/3.f5b79811.chunk.js": "/static/js/3.f5b79811.chunk.js",
-    "static/js/3.f5b79811.chunk.js.map": "/static/js/3.f5b79811.chunk.js.map",
+    "main.css": "/static/css/main.e0d6a28e.chunk.css",
+    "main.js": "/static/js/main.5c419a32.chunk.js",
+    "main.js.map": "/static/js/main.5c419a32.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c5aa08da.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c5aa08da.js.map",
+    "static/js/2.cb2c4d16.chunk.js": "/static/js/2.cb2c4d16.chunk.js",
+    "static/js/2.cb2c4d16.chunk.js.map": "/static/js/2.cb2c4d16.chunk.js.map",
+    "static/js/3.56c03d2f.chunk.js": "/static/js/3.56c03d2f.chunk.js",
+    "static/js/3.56c03d2f.chunk.js.map": "/static/js/3.56c03d2f.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.b85caa77.chunk.css.map": "/static/css/main.b85caa77.chunk.css.map",
-    "static/js/2.b9e1cd11.chunk.js.LICENSE.txt": "/static/js/2.b9e1cd11.chunk.js.LICENSE.txt",
+    "static/css/main.e0d6a28e.chunk.css.map": "/static/css/main.e0d6a28e.chunk.css.map",
+    "static/js/2.cb2c4d16.chunk.js.LICENSE.txt": "/static/js/2.cb2c4d16.chunk.js.LICENSE.txt",
     "static/media/CSS_Certificate.04016105.PNG": "/static/media/CSS_Certificate.04016105.PNG",
     "static/media/Capstone_Certificate.4c0e479c.PNG": "/static/media/Capstone_Certificate.4c0e479c.PNG",
     "static/media/HTML_Certificate.41c036a6.PNG": "/static/media/HTML_Certificate.41c036a6.PNG",
@@ -20,15 +20,15 @@
     "static/media/Nano_degree_certificate.9a3fd293.JPG": "/static/media/Nano_degree_certificate.9a3fd293.JPG",
     "static/media/Responsive_Design_Certificate.adceda92.PNG": "/static/media/Responsive_Design_Certificate.adceda92.PNG",
     "static/media/Web_Specialization_Certificate.9600e752.PNG": "/static/media/Web_Specialization_Certificate.9600e752.PNG",
-    "static/media/Youssef-Khaled-CV.cb89ee0c.pdf": "/static/media/Youssef-Khaled-CV.cb89ee0c.pdf",
+    "static/media/Yousef-khaled-CV.b32882cd.pdf": "/static/media/Yousef-khaled-CV.b32882cd.pdf",
     "static/media/black-white-diagonally.456897a4.png": "/static/media/black-white-diagonally.456897a4.png",
     "static/media/black-white-horizontally.a2530463.jpg": "/static/media/black-white-horizontally.a2530463.jpg",
     "static/media/me.108f1f5e.png": "/static/media/me.108f1f5e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.eb30a6a0.js",
-    "static/js/2.b9e1cd11.chunk.js",
-    "static/css/main.b85caa77.chunk.css",
-    "static/js/main.ce2ae0d3.chunk.js"
+    "static/js/runtime-main.c5aa08da.js",
+    "static/js/2.cb2c4d16.chunk.js",
+    "static/css/main.e0d6a28e.chunk.css",
+    "static/js/main.5c419a32.chunk.js"
   ]
 }
