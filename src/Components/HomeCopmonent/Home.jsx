@@ -4,7 +4,7 @@ import React, {useEffect, useState} from 'react';
 //Improt from material-ui
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
 //Import from other components
 import Header from '../HeaderComponent/Header';
@@ -12,7 +12,7 @@ import Header from '../HeaderComponent/Header';
 //Import data
 import bwHorizontally from '../../Shared/images/black-white-horizontally.jpg';
 import me from "../../Shared/images/me.png";
-import myCV from '../../Shared/Data/Youssef-Khaled-CV.pdf';
+import myCV from '../../Shared/Data/Yousef-khaled-CV.pdf';
 
 //Import style
 import './HomeStyle.css';
@@ -82,7 +82,7 @@ const useStyles = makeStyles(theme => ({
 function Home(props) {
 
     const [fade, setFade] = useState('fadeIn');
-
+    
     props.onHomeRender(bwHorizontally);
     const classes = useStyles();
     
