@@ -2,10 +2,7 @@
 import Container from '@material-ui/core/Container'; 
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
-
-//Import data
-import githubLogo from "../../Shared/images/github-logo.png";
+import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     mainContainer: {

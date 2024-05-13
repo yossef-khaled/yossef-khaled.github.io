@@ -8,7 +8,7 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
 //Others
 import { Lightbox} from 'react-modal-image';
@@ -24,7 +24,6 @@ const useStyles = makeStyles(theme => ({
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
         display: "block",
-        display: "table-cell",
         marginBottom: "2rem",
         [theme.breakpoints.down('sm')]: {
             textAlign: "center"
@@ -104,8 +103,8 @@ function Course(props) {
                         Organization {" "}
                     </Typography>
                     <br/>
-                    <a href={props.organization == 'ITI' ? 'https://www.iti.gov.eg' : `https://www.${props.organization}.com`}>
-                            <img src={`${props.organizationImg}`}/>
+                    <a href={props.organization === 'ITI' ? 'https://www.iti.gov.eg' : `https://www.${props.organization}.com`}>
+                        <img src={`${props.organizationImg}`} alt={`${props.organization} logo`}/>
                     </a>
                 </Container>
                 <br/>

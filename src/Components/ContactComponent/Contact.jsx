@@ -5,7 +5,7 @@ import { LinkedIn } from '@material-ui/icons';
 import { GitHub } from '@material-ui/icons';
 import { Facebook } from '@material-ui/icons';
 import { Mail } from '@material-ui/icons';
-import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
 //Import data
 import bwDiagonally from '../../Shared/images/black-white-diagonally.png';

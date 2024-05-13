@@ -4,7 +4,7 @@ import React from 'react';
 //Import from Material-ui
 import Container from '@material-ui/core/Container'; 
 import Typography from '@material-ui/core/Typography';
-import { useMediaQuery, makeStyles, useTheme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
 //Import images
 import whiteGithubLogo from '../../Shared/images/white-github-logo.png';
@@ -34,7 +34,6 @@ const useStyles = makeStyles(theme => ({
         },
     },
     collegeTitle: {
-        fontSize: "100%",
         fontSize: "140%",
         float: "left",
         [theme.breakpoints.down('sm')]: {
@@ -152,7 +151,7 @@ function Education(props) {
                 />
 
                 {/*+4 is because of the specialization courses are not considered of the main array*/}
-                {course.id != COURSES_DATA.length + 4 && <hr className={classes.horizontalLine}/>}
+                {course.id !== COURSES_DATA.length + 4 && <hr className={classes.horizontalLine}/>}
             </>
         );
     });

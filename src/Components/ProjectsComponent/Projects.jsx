@@ -51,7 +51,7 @@ function Projects(props) {
                          titlePosition="right"
                 />
                 <br/>
-                {project.id != PROJECTS_DATA.length && <hr className={classes.horizontalLine}/>}
+                {project.id !== PROJECTS_DATA.length && <hr className={classes.horizontalLine}/>}
                 <br/>
             </>
         )
