@@ -110,7 +110,7 @@ function Project(props) {
                 <a href={props.link} className={classes.btnLink}>
                     <Button variant="outlined" className={classes.projectButton} style={{borderColor: props.textColor, color: props.textColor}} disableElevation>
                         See on Github
-                        <img src={props.githubLogo}/>
+                        <img src={props.githubLogo} alt="Github logo"/>
                     </Button>
                 </a>
             </Container>
