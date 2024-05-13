@@ -106,7 +106,7 @@ function Home(props) {
             <Typography variant="overline" className={classes.personalInfo}>
                 I'm a full stack web developer
                 <br/>
-                I use (MERN & .NET)
+                I use MERN stack
             </Typography>
             <Avatar alt="Photo of me" src={me} className={classes.myPhoto}/>
             <Typography variant="overline" className={classes.personalInfo} style={{color: "#000000"}}>
