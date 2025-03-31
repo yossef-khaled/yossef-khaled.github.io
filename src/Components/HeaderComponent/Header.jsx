@@ -72,7 +72,6 @@ function Header(props) {
     //const isMeduim = useMediaQuery(theme.breakpoints.up('md'));
 
 
-    console.log(props.borderColor);
     return(
         <div style={{position: "sticky", top: "0"}}>
             <AppBar position="static" className={classes.appBar}>

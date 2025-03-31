@@ -7,8 +7,6 @@ function App() {
 
   const [backgroundImage, setBackgroundImage] = useState();
 
-  console.log(`${JSON.stringify(backgroundImage)} is the background image at App`);
-
   return (
     <BrowserRouter>
         <div className="App" style=

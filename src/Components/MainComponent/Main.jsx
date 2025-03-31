@@ -10,9 +10,7 @@ import Projects from '../ProjectsComponent/Projects';
 import Education from '../EducationComponent/Education';
 import Contact from '../ContactComponent/Contact';
 
-function Main(props) { 
-
-    console.log(`${JSON.stringify(props.onComponentRender())} at Main`);
+function Main(props) {
 
     return (
         <>

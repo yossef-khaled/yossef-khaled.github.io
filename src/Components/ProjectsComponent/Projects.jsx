@@ -31,9 +31,7 @@ const styles = {
 function Projects(props) {
     
     const { classes } = props;
-    console.log(`${JSON.stringify(props)} at Projects`);    
     props.onProjectsRender(bWVertically);
-    console.log(bWVertically);
 
     const projects = PROJECTS_DATA.map((project) => {
         return(
